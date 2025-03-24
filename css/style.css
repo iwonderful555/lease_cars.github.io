@@ -2,10 +2,9 @@ html{
     box-sizing: border-box;
 }
 *, *::after, *::before {
-    box-sizing: inherit;  /* как у родителя */
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
-    /* outline: 1px solid red; */
 }
 html,
 body {
@@ -16,7 +15,7 @@ ul {
 }
 a {
     text-decoration: none;
-    color: inherit;  /* как у родителя */
+    color: inherit;
 }
 body {
     font-family: 'Inter', sans-serif;
@@ -29,11 +28,11 @@ body {
     background-color: #151515;
 }
 .header-main {
-    background-color: transparent;  /* прозрачный */
-    position: absolute;  /* для картинки слайдера */
-    z-index: 10;  /* для картинки слайдера; чтобы работала ссылка z-index должен быть выше */
-    left: 0;    /* растянуть контент, который сдвинулся */
-    right: 0;   /* растянуть контент, который сдвинулся */
+    background-color: transparent;
+    position: absolute;
+    z-index: 10; 
+    left: 0;
+    right: 0;
 }
 .section-title {
     margin-bottom: 50px;
@@ -47,7 +46,7 @@ body {
     flex-direction: column;
 }
 .container {
-    max-width: 1220px;  /* 1200 + padding 10+10 */
+    max-width: 1220px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -56,7 +55,7 @@ body {
     padding-bottom: 45px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* прижмет к низу */
+    align-items: flex-end;
 }
 .menu__list {
     display: flex;
@@ -67,13 +66,13 @@ body {
     text-transform: uppercase;
     font-weight: 700;
 }
-.menu__list-link--active { /* модификатор активной страницы, класс прописать в html в <a> в каждой странице 1 раз возле соответствующей ссылке, указывающей на данную страницу */
+.menu__list-link--active {
     color: #0066FF;
 }
 
 .footer {
     background-color: #151515;
-    padding: 50px 0 32px;  /* сверху по-бокам снизу */
+    padding: 50px 0 32px;
     color: #fff;
 }
 .footer__menu {
@@ -81,15 +80,12 @@ body {
     justify-content: space-around;
     margin-bottom: 50px;
 }
-.footer__menu-list {
-    /* min-width: 250px;  - на всякий случай фиксируем максимальную ширину, для адаптива мешает */
-}
 .footer__menu-title {
     font-size: 24px;
     font-weight: 700;
     padding-bottom: 20px;
 }
-.footer__menu-item + .footer__menu-item {  /* селектор "+" считывает с 2-го элемента */
+.footer__menu-item + .footer__menu-item {
     padding-top: 20px;
 }
 .app {
@@ -100,7 +96,7 @@ body {
 }
 .footer__copy {
     max-width: 800px;
-    margin: 0 auto 30px; /* сверху по-бокам снизу */
+    margin: 0 auto 30px;
     text-align: center;
 }
 .copy__nav-list {
@@ -109,17 +105,17 @@ body {
     gap: 40px;
 }
 main {
-    flex-grow: 1; /* заполняет собой всю высоту */
+    flex-grow: 1;
 }
 .top {
     color: #fff;
     text-align: center;
-    padding-top: 250px; /* изначально было 105px, после position: absolute отступ считается от верха страницы */
+    padding-top: 250px;
     padding-bottom: 50px;
-    position: absolute;  /* для картинки слайдера */
-    z-index: 5;  /* для картинки слайдера */
-    left: 0;    /* растянуть контент, который сдвинулся */
-    right: 0;   /* растянуть контент, который сдвинулся */
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
 }
 .title {
     padding-bottom: 40px;
@@ -128,38 +124,34 @@ main {
 }
 .top__link {
     background-color: #151515;
-    padding: 23px;  /* чтобы зарезервировать отступ по бокам */
+    padding: 23px;
     max-width: 430px;
-    width: 100%;   /* чтобы применилась max-width */
-    display: inline-block;  /* чтобы отступы работали, т.к. тег <а> строчный */
+    width: 100%;
+    display: inline-block;
     text-transform: uppercase;
     font-size: 36px;
     font-weight: 700;
 }
-/* .swiper-wrapper {
-    background: rgba(21,21,21,0.3);  - не работает затемнение
-} */
 .swiper-slide {
-    height: 100vh;  /* 100% высоты экрана */
-    background-size: cover;  /* чтобы картинка заполнила всю ширину */
+    height: 100vh;
+    background-size: cover;
     background-position: center;
-    position: relative;    /* для наложение затемняющего фона */
+    position: relative;
 }
-.swiper-slide::before {    /* наложение затемняющего фона */
+.swiper-slide::before {
     content: "";
     position: absolute;
-    inset: 0;  /* Располагает элемент (::before) во всю ширину и высоту родителя */
+    inset: 0;
     background: rgba(21, 21, 21, 0.3);
     z-index: 1;
 }
-.swiper-pagination-bullet {  /* найти в dev tool класс отображ.передвиж. слайдера и стилизировать под макет */
+.swiper-pagination-bullet {
     width: 120px;
     height: 3px;
     background-color: #151515;
     border-radius: 0;
-    opacity: 1;  /* убирает прозрачность */ 
+    opacity: 1; 
 }
-/* найти в dev tool класс отображ.передвиж. слайдера и стилизировать под макет */
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 15px;
 }
@@ -217,7 +209,7 @@ main {
     padding: 19px 0 19px 240px;
     min-height: 63px;
 }
-.how__does-item + .how__does-item {   /* селектор "+" считывает с 2-го элемента */
+.how__does-item + .how__does-item {
     margin-top: 40px;
 }
 .how__does-item::before {
@@ -251,7 +243,7 @@ main {
 }
 .video__content {
     margin: 0 auto;
-    display: block;  /* чтобы применился margin */
+    display: block;
 }
 .important {
     padding-bottom: 150px;
@@ -283,7 +275,7 @@ main {
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 50px;
-    padding: 0 100px;  /* если вдруг будет больше текста */
+    padding: 0 100px;
 }
 form {
     max-width: 580px;
@@ -298,11 +290,11 @@ form {
     display: inline-block;
     border: 1px solid #0066FF;
     margin-bottom: 50px;
-    font-family: 'Inter', sans-serif; /* для input лучше указать */
-    font-size: 16px;  /* для input лучше указать */
-    font-weight: 400;  /* для input лучше указать */
-    line-height: 1.3;  /* для input лучше указать */
-    color: #000;  /* для input лучше указать */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000;
 }
 .form__input::placeholder,
 .form__textarea::placeholder {
@@ -315,7 +307,7 @@ form {
 }
 .form__textarea {
     width: 100%;
-    resize: none;  /* запрещаем увеличиваться */
+    resize: none;
     padding: 28px 20px;
     height: 290px;
     border: 1px solid #0066FF;
@@ -334,7 +326,7 @@ form {
     font-size: 16px;
     font-weight: 400;
     padding: 13px 61px;
-    margin: 0 auto;   /* сработало, потому что это flex-элемент */
+    margin: 0 auto;
     border: none;
 }
 .blog {
@@ -382,7 +374,7 @@ form {
     margin-bottom: 70px;
 }
 .tabs__btn {
-    padding: 0 150px 100px;  /* 0-сверху 150-по бокам  100-снизу */
+    padding: 0 150px 100px;
     display: flex;
     justify-content: space-between;
     gap: 80px;
@@ -401,7 +393,7 @@ form {
 .tabs__content-item {
     display: none;
     grid-template-columns: repeat(4, 1fr);
-    gap: 100px 40px;  /* по-вертикали по-горизонтали */
+    gap: 100px 40px;
 }
 .tabs__content-item.tabs__content-item--active {
     display: grid;
@@ -415,7 +407,7 @@ form {
     border-top: 0;
 }
 .card__img {
-    display: block;  /* чтобы у картинки убрать отступ */
+    display: block;
 }
 .card__title {
     padding-top: 20px;
@@ -437,17 +429,17 @@ form {
     border: 1px solid #0066FF;
     border-top: 0;
 }
-.menu__btn {         /* адаптация menu__list */
+.menu__btn {
     width: 30px;
     height: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0;        /* обнуляем стили по умолчанию */
-    border: none;      /* обнуляем стили по умолчанию */
-    background-color: transparent;      /* обнуляем стили по умолчанию */
+    padding: 0;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
-    display: none;     /* скрываем, отобразим в @media (max-width: 860px) */
+    display: none;
 }
 .menu__btn span {
     height: 2px;
@@ -456,7 +448,7 @@ form {
 }
 
 .card__img {
-    width: 100%;    /* картинки при уменьшении экрана - уменьшаются */
+    width: 100%;
 }
 
 .pre-owned {
@@ -504,7 +496,7 @@ form {
         width: 100%;
     }
     .tabs__btn {
-        padding: 0 0 50px;   /* 50 - снизу */
+        padding: 0 0 50px;
         gap: 20px;
     }
 }
@@ -531,11 +523,11 @@ form {
         bottom: 0;
         padding-top: 200px;
         height: 100vh;
-        transform: translateY(-100%);  /* прячем меню */
-        transition: transform 0.3s ease;   /* добавляем плавность */
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
     }
     .menu__list.menu__list--active {
-        transform: translateY(0%);  /* отображаем меню, записан в js */
+        transform: translateY(0%);
     }
     .why-lease__list {
         grid-template-columns: repeat(2, 1fr);
