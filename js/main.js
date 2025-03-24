@@ -1,5 +1,4 @@
 
-// табы
 const tabItem = document.querySelectorAll('.tabs__btn-item');
 const tabContent = document.querySelectorAll('.tabs__content-item');
 
@@ -22,24 +21,21 @@ function open(evt) {
   document.querySelector(`#${button}`).classList.add('tabs__content-item--active');
 }
 
-// для адаптации верхнего меню 
 const menuBtn = document.querySelector('.menu__btn');
 const menu = document.querySelector('.menu__list');
 
 menuBtn.addEventListener('click', () => {
-  menu.classList.toggle('menu__list--active');     //добавляем class active
+  menu.classList.toggle('menu__list--active');
 });
 
 
-
-// swiper должен быть ниже, чтобы работали табы
 const swiper = new Swiper(".swiper", {
   effect: "fade",
   pagination: {
     el: ".swiper-pagination",
   },
   autoplay: {
-    delay: 3000,    // задержка в милисекундах
-    disableOnInteraction: false,     // мышкой также можно прокручивать
+    delay: 3000,
+    disableOnInteraction: false,
   },
 });
